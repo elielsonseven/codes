@@ -52,7 +52,7 @@ class TV:
         print(f"Volume: {self.volume}")
 
 
-# Exemplo de uso
+#uso
 minha_tv = TV("LG", 43)
 minha_tv.ligar_desligar()
 minha_tv.mostrar_estado()
