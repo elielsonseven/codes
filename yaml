@@ -1,9 +1,0 @@
-+-------------------+        +------------------+       +------------------+       +-------------------+       +-----------------+       +---------------+
-|       Aluno       |        |      Curso       |       |     Endereço     |       |     Disciplina    |       |    Professor    |       |     Sala      |
-+-------------------+        +------------------+       +------------------+       +-------------------+       +-----------------+       +---------------+
-| - matricula: int  |        | - codigo: int    |       | - rua: str       |       | - codigo: int     |       | - codigo: int  |       | - numero: int |
-| - nome: str       |        | - nome: str      |       | - numero: int    |       | - nome: str       |       | - nome: str    |       | - capacidade: int |
-| - endereco: Endereço |      +------------------+      | - bairro: str    |       | - professor: Professor |  | - disciplinas: list(Disciplina) | | 
-| - cursos: list(Curso) |                               | - cidade: str    |       | - alunos: list(Aluno) |   | - disciplinas: list(Disciplina) | | 
-+-------------------+                                   | - estado: str    |       +-------------------+       +-----------------+       +---------------+
-                                                        +------------------+

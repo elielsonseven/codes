@@ -1,0 +1,83 @@
+#Diagrama
+
+#+-------------------+        +------------------+       +------------------+       +-------------------+       +-----------------+                  +---------------+
+#|       Aluno       |        |      Curso       |       |     Endereço     |       |     Disciplina    |       |    Professor    |                  |     Sala      |
+#+-------------------+        +------------------+       +------------------+       +-------------------+       +-----------------+                  +---------------+
+#| - matricula: int  |        | - codigo: int    |       | - rua: str       |       | - codigo: int     |       | - codigo: int  |                   | - numero: int |
+#| - nome: str       |        | - nome: str      |       | - numero: int    |       | - nome: str       |       | - nome: str    |                   | - capacidade: int |
+#| - endereco: Endereço |      +------------------+      | - bairro: str    |       | - professor: Professor |  | - disciplinas: list(Disciplina) |  +---------------+
+#| - cursos: list(Curso) |                               | - cidade: str    |       | - alunos: list(Aluno) |   | - disciplinas: list(Disciplina) |  
+#+-------------------+                                   | - estado: str    |       +-------------------+       +-----------------+                    
+#                                                        +------------------+
+
+
+class Endereco:
+    def __init__(self, rua, numero, bairro, cidade, estado):
+        self.rua = rua
+        self.numero = numero
+        self.bairro = bairro
+        self.cidade = cidade
+        self.estado = estado
+
+class Aluno:
+    def __init__(self, matricula, nome, endereco):
+        self.matricula = matricula
+        self.nome = nome
+        self.endereco = endereco
+        self.cursos = []
+
+class Curso:
+    def __init__(self, codigo, nome):
+        self.codigo = codigo
+        self.nome = nome
+        self.disciplinas = []
+
+class Disciplina:
+    def __init__(self, codigo, nome, professor):
+        self.codigo = codigo
+        self.nome = nome
+        self.professor = professor
+        self.alunos = []
+
+class Professor:
+    def __init__(self, codigo, nome):
+        self.codigo = codigo
+        self.nome = nome
+        self.disciplinas = []
+
+class Sala:
+    def __init__(self, numero, capacidade):
+        self.numero = numero
+        self.capacidade = capacidade
+
+# Criando alguns endereços
+endereco1 = Endereco("Rua A", 123, "Centro", "Serra Talhada", "PE")
+endereco2 = Endereco("Rua B", 456, "Vila Bela", "Serra talhada", "PE")
+
+# Criando alguns alunos
+aluno1 = Aluno(1, "João", endereco1)
+aluno2 = Aluno(2, "Maria", endereco2)
+
+# Criando alguns cursos
+curso1 = Curso(101, "Sistemas de Informação")
+curso2 = Curso(102, "Administração")
+
+# Associando alunos aos cursos
+curso1.alunos.append(aluno1)
+curso2.alunos.append(aluno2)
+
+# Criando alguns professores
+professor1 = Professor(201, "Pedro")
+professor2 = Professor(202, "Ana")
+
+# Criando algumas disciplinas
+disciplina1 = Disciplina(301, "Cálculo I", professor1)
+disciplina2 = Disciplina(302, "MPOO", professor2)
+
+# Associando disciplinas aos cursos
+curso1.disciplinas.append(disciplina1)
+curso2.disciplinas.append(disciplina2)
+
+# Criando algumas salas
+sala1 = Sala(1, 50)
+sala2 = Sala(2, 40)
